@@ -76,9 +76,9 @@ async function swapARTtoUSDT() {
 
         console.log(`Transaction sent. Hash: ${tx.hash}`);
         await tx.wait();
-        console.log("Transaction confirmed.");
+        console.log("\x1b[32m%s\x1b[0m", "Transaction confirmed.\n");
     } catch (error) {
-        console.error("Saldo Tidak cukup"); //, error);
+        console.error("\x1b[31m%s\x1b[0m", "Saldo Tidak cukup"); //, error);
     }
 }
 
@@ -112,9 +112,9 @@ async function swapUSDTtoART() {
 
         console.log(`Transaction sent. Hash: ${tx.hash}`);
         await tx.wait();
-        console.log("Transaction confirmed.\n");
+        console.log("\x1b[32m%s\x1b[0m", "Transaction confirmed.\n");
     } catch (error) {
-        console.error("Saldo Tidak cukup"); //, error);
+        console.error("\x1b[31m%s\x1b[0m", "Saldo Tidak cukup"); //, error);
     }
 }
 
@@ -128,11 +128,10 @@ async function performSwaps() {
             await swapUSDTtoART();
             await new Promise(resolve => setTimeout(resolve, 3000)); // Wait for 5 seconds
         } catch (error) {
-            console.error("Saldo Tidak cukup"); //, error);
+            console.error("\x1b[31m%s\x1b[0m", "Saldo Tidak cukup"); //, error);
             await new Promise(resolve => setTimeout(resolve, 3000)); // Wait for 5 seconds before retrying
         }
     }
 }
 
 performSwaps();
-
