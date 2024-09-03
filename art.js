@@ -38,7 +38,7 @@ async function logStatus() {
     const artsBalance = await getBalance("0x0000000000000000000000000000000000000000"); // ART token address
     const artBalance = await getBalance("0x557ceb8739640b02a547a04643089accb3b88e03"); // ART token address
     const usdtBalance = await getBalance("0x6cddd437ced8a9af4d53ee51b1645bbd08f9b702"); // USDT token address
-    console.log(`No\t\t: [${logSequence++}]\nART Balance\t: ${ethers.utils.formatUnits(artsBalance, 18)} ART`);
+    console.log(`No\t\t: ${logSequence++}\nART Balance\t: ${ethers.utils.formatUnits(artsBalance, 18)} ART`);
     console.log(`USDT Balance\t: ${ethers.utils.formatUnits(usdtBalance, 18)} USDT`);
 }
 
