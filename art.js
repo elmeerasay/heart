@@ -81,7 +81,7 @@ async function swapARTtoUSDT() {
         await tx.wait();
         console.log("Status\t\t: \x1b[32m%s\x1b[0m", "Transaction confirmed");
     } catch (error) {
-        console.error("Status\t\t: \x1b[31m%s\x1b[0m", "Error!"); 
+        console.error("Status\t\t: \x1b[31m%s\x1b[0m", error.reason); 
     }
 }
 
@@ -120,7 +120,7 @@ async function swapUSDTtoART() {
         await tx.wait();
         console.log("Status\t\t: \x1b[32m%s\x1b[0m", "Transaction confirmed\n");
     } catch (error) {
-        console.error("Status\t\t: \x1b[31m%s\x1b[0m", "Error!\n"); 
+        console.error("Status\t\t: \x1b[31m%s\x1b[0m", error.reason); 
     }
 }
 
@@ -134,7 +134,7 @@ async function performSwaps() {
             await swapUSDTtoART();
             await new Promise(resolve => setTimeout(resolve, 0)); // Wait for 5 seconds
         } catch (error) {
-            console.error("Status\t\t: \x1b[31m%s\x1b[0m", "Error!\n"); 
+            console.error("Status\t\t: \x1b[31m%s\x1b[0m", error.reason); 
             await new Promise(resolve => setTimeout(resolve, 3000)); // Wait for 5 seconds before retrying
         }
     }
