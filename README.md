@@ -24,7 +24,7 @@ Masukin Pk kamu
 CTRL + X 
 ```
 
-Save lalu jalankan node
+Save lalu jalankan node, pilih salah satu dibawah ini
 
 ```bash
 node art.js
